@@ -56,10 +56,12 @@ p {
 
 #bg {
   width: 100%;
-  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 54.8em;
+  opacity: 0.5;
+
 }
 
 #nav {
@@ -67,6 +69,7 @@ p {
   top: 0px;
   right: 50px;
   left: 50px;
+  z-index: 1000;
 }
 
 .centruotasText {
@@ -81,17 +84,33 @@ p {
   opacity: 0.5;
 }
 
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 75%;
+    max-height: 75%;
+    padding-top: 53px;
+    padding-right: 50px;
+    margin: 0 auto;
+
+
+
+  }
+
 .apacia {
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   bottom: 0;
   color: RGB(72, 251, 71);
   text-align: center;
-  clear: both;
-  position: relative;
-  z-index: 10;
-  height: 3em;
-  margin-top: -3em;
   background-image: url("../34656902-mesh-metal-grate-as-background-grill-vector.jpg");
+}
+
+body {
+
+      background-image: url("../body.png");
+
+
 }
