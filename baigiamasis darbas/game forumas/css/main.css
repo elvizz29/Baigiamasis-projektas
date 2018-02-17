@@ -9,7 +9,6 @@ body {
   background-repeat: repeat-y;
   background-position: center top;
   opacity: 0.8;
-
 }
 
 ul {
@@ -30,11 +29,13 @@ li a {
   color: RGB(72, 251, 71);
   text-align: center;
   padding: 14px 16px;
+  font-size: 13px;
   text-decoration: none;
 }
 
 li a:hover {
   background-color: white;
+  color: red;
 }
 
 a:link {
@@ -55,6 +56,33 @@ a:active {
 
 p {
   text-align: justify;
+  /* top meniu */
+}
+
+.meniu {
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+.meniu a {
+  list-style: none;
+  padding-left: 20px;
+  display: block;
+  height: 20px;
+  line-height: 10px;
+  border: none;
+  background-image: url("../5.jpg");
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.meniu a:hover {
+  color: red;
+  /* soniniai meniu kairys_col ir desinys_col*/
+}
+
+.meniu a:link {
+  background-color: white;
 }
 
 #nav {
@@ -63,6 +91,7 @@ p {
   margin: 0;
   padding: 0;
   background-image: url("../5.jpg");
+  /* nav juosta virsutine */
 }
 
 #wrapper {
@@ -79,6 +108,7 @@ p {
   padding: 0;
   background-image: url("../22_1407441980.jpg");
   background-repeat: no-repeat;
+  /* headerio foto */
 }
 
 #container {
@@ -86,20 +116,61 @@ p {
   padding-top: 15px;
 }
 
+#kairys_col {
+  width: 170px;
+  float: left;
+  background-color: #222;
+  min-height: 710px;
+  border-top: 3px solid #444;
+  border-bottom: 3px solid #444;
+  background-image: url("../5.jpg");
+  background-repeat: repeat-y;
+  /* meniu stulpelis kairej turinio */
+}
+
+#desinys_col {
+  width: 170px;
+  float: right;
+  background-color: #222;
+  min-height: 710px;
+  border-top: 3px solid #444;
+  border-bottom: 3px solid #444;
+  background-image: url('../5.jpg');
+  background-repeat: repeat-y;
+  /* meniu stulpelis desineje */
+}
+
+}
+
+#kairys_col p, #desinys_col p {
+  padding: 0 10px 0 10px;
+}
+
+#kairys_col h3, #desinys_col h3 {
+  color: red;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: #333;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  background-image: url("../meniu_h3.jpg");
+  background-repeat: no-repeat;
+}
+
 #turinys {
-	margin-left: 175px;
-	margin-right: 175px;
-	min-height:600px;
-	padding: 20px;
-	color: RGB(72, 251, 71);
-	border-top: 3px solid #444;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-  background-image: url("../cs-go-Urbalan-Winter-2017.jpg");
-
-
-
+  margin-left: 175px;
+  margin-right: 175px;
+  min-height: 710px;
+  padding: 20px;
+  color: RGB(72, 251, 71);
+  border-top: 3px solid #444;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-image: url("../thumb-1920-570391.jpg");
+  font-size: 13px;
 }
 
 #apacia {
