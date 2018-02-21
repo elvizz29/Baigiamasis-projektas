@@ -277,7 +277,7 @@ p {
 .numeracija {
   color: RGB(72, 251, 71);
   font-size: 12px;
-  padding: 8px 12px;
+  padding: 12px 12px;
   position: absolute;
   top: 0;
 }
@@ -322,8 +322,169 @@ p {
   color: RGB(72, 251, 71);
   position: absolute;
   bottom: 1;
-  width: 77.8%;
+  width: 72.7%;
   height: 40px;
   font-size: 13px;
   background-image: url("../footer.jpg");
 }
+
+
+/* prisijungimo formos pradzia */
+
+/* krastines */
+form {
+    border: 3px solid RGB(72, 251, 71);
+}
+
+/* laukeliai ivedimo */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid RGB(72, 251, 71);
+    box-sizing: border-box;
+    background-color: white;
+
+
+}
+
+
+
+/* mygtuku stilius */
+button {
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* cancel button stilius */
+.atsaukti {
+    width: auto;
+    padding: 10px 18px;
+    background-color: red;
+}
+
+/* centruotas avataras */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* avataro img */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+/* pamirsau slaptazodi */
+span.password {
+    float: right;
+    padding-top: 16px;
+}
+
+/* input ir cancel mygtuko responsive mobile s */
+@media screen and (max-width: 300px) {
+    span.password {
+        display: block;
+        float: none;
+    }
+    .atsaukti {
+        width: 100%;
+    }
+}
+    /* prisijungimo formos pabaiga */
+
+
+
+
+
+    /* registracijos formos pradzia */
+
+    /* centruotas avataras */
+    .img2container {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    /* avataro img */
+    img.avatar2 {
+        width: 25%;
+        border-radius: 50%;
+    }
+
+
+    /* input laukai */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: white;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+/* mygtuku stilius - registruotis */
+button {
+  background-color: RGB(72, 251, 71);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* cancel mygtuko stilius */
+.atsaukimas_btn {
+  padding: 14px 20px;
+  background-color: red;
+}
+
+/* Float cancel ir registracijos btn cancel su plociu */
+.atsaukimas_btn, .registruotis_btn {
+  float: none;
+  width: 25%;
+}
+
+
+.reg_container {
+  padding: 16px;
+  text-align: left;
+}
+
+
+/* responsive forma */
+@media screen and (max-width: 300px) {
+  .atsaukimas_btn, .registruotis_btn {
+    width: 100%;
+  }
+}
+
+  /* registracijos formos pabaiga */
