@@ -1,4 +1,27 @@
 <!DOCTYPE html>
+
+
+<?php
+  // jeigu post metodas suveike , ideti reiksmes i DB.
+   // userio registracija
+
+	require ('prisijungimas_prie_DB.php');
+    if (isset($_POST['vartotojo_vardas']) && isset($_POST['slaptazodis'])){
+        $vardas = $_POST['vartotojo_vardas'];
+	$elpastas = $_POST['elpastas'];
+        $slaptazodis = $_POST['slaptazodis'];
+
+        $registruoti = "INSERT INTO `vartotojai` (vartotojo_vardas, slaptazodis, elpastas) VALUES ('$vardas', '$slaptazodis', '$elpastas')";
+        $arpavyko = mysqli_query($connection, $registruoti);
+        if($arpavyko){
+            $ok = "Vartotojas sukurtas sėkmingai.";
+        }else{
+            $failreg ="Registracija nepavyko";
+        }
+    }
+    ?>
+
+
 <html>
 
 <head>
@@ -13,16 +36,21 @@
 
 <body>
 
-  <form action="registracijos_forma.html" style="border:1px solid #ccc">
+  <form class="registracijos_forma" method="POST">
+		 		<?php if(isset($ok)){ ?><div class="alert alert-success" role="alert"> <?php echo $ok; ?> </div><?php } ?>
+					<?php if(isset($failreg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $failreg; ?> </div><?php } ?>
     <div class="reg_container">
       <div class="img2container">
-        <img src="8031433.jpg" alt="Avatar2" class="avatar2">
+        <img src="./images/8031433.jpg" alt="Avatar2" class="avatar2">
 
       </div>
       <h1 style="color: red"><strong>Registruotis</strong></h1>
 
-      <label for="email" style="color: RGB(72, 251, 71)"><strong>El.pastas</strong></label>
-      <input type="text" placeholder="Iveskite el.pasta" name="email" required>
+			<label for="vartotojo_vardas" style="color: RGB(72, 251, 71)"><strong>Vartotojo vardas</strong></label>
+			<input type="text" placeholder="Iveskite vartotojo vardą" name="vartotojo_vardas" required>
+
+      <label for="elpastas" style="color: RGB(72, 251, 71)"><strong>El.pastas</strong></label>
+      <input type="text" placeholder="Iveskite el.pasta" name="elpastas" required>
 
       <label for="slaptazodis" style="color: RGB(72, 251, 71)"><strong>Slaptazodis</strong></label>
       <input type="password" placeholder="Iveskite Slaptazodi" name="slaptazodis" required>
@@ -34,8 +62,8 @@
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Prisiminti
       </label>
 
-      <div class="clearfix">
-        <button type="button" class="atsaukimas_btn">Atsaukti</button>
+      <div class="mygtukai">
+      	<a href="index.php"> Atšaukti </a>
         <button type="submit" class="registruotis_btn">Registruotis</button>
       </div>
     </div>

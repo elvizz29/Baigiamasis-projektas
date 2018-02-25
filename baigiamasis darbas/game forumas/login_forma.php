@@ -1,5 +1,41 @@
 
 <!DOCTYPE html>
+
+<?php
+
+session_start();
+require ('prisijungimas_prie_DB.php');
+// user ir pssw kintamieji
+$vartotojas = "vartotojo_vardas";
+$slaptazodis = "slaptazodis";
+
+// klaida
+$error = "prisijungti nepavyko";
+
+// patikrina ar prisijunges vartotojas, jei ne tai nukreipia i prisijungta.php
+if (isset($_SESSION['Prisijungta']) && $_SESSION['Prisijungta'] == true) {
+    $error = "Prisijungti pavyko";
+    header('Location: prisijungta.php');
+}
+
+// patikrina ar suvesti prisijungimo duomenys
+// jei suvesti tai prijungia vartotoja
+if (isset($_POST['vartotojo_vardas']) && isset($_POST['vartotojo_vardas'])) {
+    if ($_POST['vartotojo_vardas'] == $vartotojas && $_POST['slaptazodis'] == $slaptazodis) {
+        $_SESSION['Prisijungta'] = true;
+        header('Location: prisijungta.php');
+    } else {
+        $_SESSION['Prisijungta'] = false;
+        $error = "Neteisingi prisijungimo duomenys!";
+    }
+}
+?>
+
+
+
+
+
+
 <html>
 
 <head>
@@ -14,10 +50,12 @@
 
 <body>
 
+  <?php echo "<font color='red'>" . $error . "</font>"; ?>
 
-  <form action="login_forma.html">
+
+  <form action="login_forma.php" method="POST">
     <div class="imgcontainer">
-      <img src="user-login.jpg" alt="Avatar" class="avatar">
+      <img src="./images/user-login.jpg" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -27,15 +65,16 @@
       <label for="slaptazodis" style="color: RGB(72, 251, 71)"><strong>Slaptazodis</strong></label>
       <input type="password" placeholder="Iveskite Slaptazodi" name="slaptazodis" required>
 
-      <button type="submit">Prisijungti</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Prisijungti</button>
       <label style="color: RGB(72, 251, 71)">
         <input  type="checkbox" checked="checked" name="prisiminti"> <strong>Prisiminti</strong>
       </label>
     </div>
 
     <div class="container" style="background-color:white">
-      <button type="button" class="atsaukti">Atsaukti</button>
-      <span class="slaptazodis">Pamirsai <a href="#">slaptazodi?</a></span>
+      <button  type="reset" class="atsaukti">Atsaukti</button>
+
+      <span class="slaptazodis">Pamirsai <a href="slaptazodzio_priminimas.php">slaptazodi?</a></span>
     </div>
   </form>
 
@@ -47,4 +86,5 @@
 
 
 </body>
+
 </html>

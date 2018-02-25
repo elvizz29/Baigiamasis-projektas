@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,7 +9,7 @@ body {
   font-family: Arial, Helvetica, Sans-Serif;
   font-size: 11px;
   background: #222;
-  background-image: url("../cs-go-Urbalan-Winter-2017.jpg");
+  background-image: url("../images/cs-go-Urbalan-Winter-2017.jpg");
   background-repeat: repeat-y;
   background-position: center top;
   opacity: 0.9;
@@ -17,7 +21,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  background-image: url("../5.jpg");
+  background-image: url("../images/5.jpg");
 }
 
 li {
@@ -71,7 +75,7 @@ p {
   height: 20px;
   line-height: 10px;
   border: none;
-  background-image: url("../5.jpg");
+  background-image: url("../images/5.jpg");
   vertical-align: middle;
   font-size: 13px;
 }
@@ -90,7 +94,7 @@ p {
   background-color: #fff;
   margin: 0;
   padding: 0;
-  background-image: url("../5.jpg");
+  background-image: url("../images/5.jpg");
   /* nav juosta virsutine */
 }
 
@@ -106,7 +110,7 @@ p {
   background-color: #000;
   margin: 0;
   padding: 0;
-  background-image: url("../22_1407441980.jpg");
+  background-image: url("../images/22_1407441980.jpg");
   background-repeat: no-repeat;
   /* headerio foto */
 }
@@ -123,7 +127,7 @@ p {
   min-height: 800px;
   border-top: 3px solid #444;
   border-bottom: 3px solid #444;
-  background-image: url("../5.jpg");
+  background-image: url("../images/5.jpg");
   background-repeat: repeat-y;
   /* meniu stulpelis kairej turinio */
 }
@@ -133,7 +137,7 @@ p {
 
     position:relative;
     left: 20%;
-    bottom: 10%;
+    bottom: 0%;
     padding: 16px;
     padding-right: 10px;
     border-radius: 8px;
@@ -143,6 +147,7 @@ p {
     display: inline-block;
     font-size: 14px;
     text-transform: uppercase;
+
 
 
 
@@ -208,10 +213,13 @@ p {
   min-height: 800px;
   border-top: 3px solid #444;
   border-bottom: 3px solid #444;
-  background-image: url('../5.jpg');
+  background-image: url('../images/5.jpg');
   background-repeat: repeat-y;
   /* meniu stulpelis desineje */
 }
+
+
+.material-icons { color: white;}
 
 
 
@@ -221,42 +229,43 @@ p {
 
 #kairys_col h3, #desinys_col h3 {
   color: red;
-  padding: 0;
+  padding: 3;
   margin: 0;
   text-align: center;
   background-color: #333;
   height: 30px;
   line-height: 30px;
   font-size: 20px;
-  background-image: url("../meniu_h3.jpg");
+  background-image: url("../images/meniu_h3.jpg");
   background-repeat: no-repeat;
 }
 
 #turinys {
   margin-left: 175px;
   margin-right: 175px;
-  min-height: 670px;
+  min-height: 822px;
   padding: 20px;
   color: RGB(72, 251, 71);
   border-top: 3px solid #444;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  background-image: url("../thumb-1920-570391.jpg");
+  background-image: url("../images/thumb-1920-570391.jpg");
   font-size: 13px;
 }
 
 
 
 /* skaidriu konteineris */
-.container {
-  max-width: 665px;
+.slides-container {
+  max-width: 600px;
   position: relative;
   margin: auto;
 }
 
 .mySlides {
     display: none;
+
 }
 
 
@@ -320,21 +329,22 @@ p {
 
 #apacia {
   color: RGB(72, 251, 71);
-  position: absolute;
-  bottom: 1;
-  width: 72.7%;
-  height: 40px;
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
+  width: 100%;
+  height: 35px;
   font-size: 13px;
-  background-image: url("../footer.jpg");
+  background-image: url("../images/footer.jpg");
+
 }
+
 
 
 /* prisijungimo formos pradzia */
 
-/* krastines */
-form {
-    border: 3px solid RGB(72, 251, 71);
-}
 
 /* laukeliai ivedimo */
 input[type=text], input[type=password] {
@@ -345,6 +355,19 @@ input[type=text], input[type=password] {
     border: 1px solid RGB(72, 251, 71);
     box-sizing: border-box;
     background-color: white;
+
+
+}
+
+
+@media screen and (min-width : 300px)  {
+
+
+#wrapper {
+
+  width: 100%;
+
+}
 
 
 }
@@ -383,13 +406,19 @@ button:hover {
 
 /* avataro img */
 img.avatar {
-    width: 40%;
+    width: 30%;
     border-radius: 50%;
 }
 
+img.avatar3 {
+    width: 20%;
+    border-radius: 50%;
+}
+/* slaptazodzio priminimo formos paveikslelis */
 
 .container {
     padding: 16px;
+    width: 400px;
 }
 
 /* pamirsau slaptazodi */
@@ -412,8 +441,6 @@ span.password {
 
 
 
-
-
     /* registracijos formos pradzia */
 
     /* centruotas avataras */
@@ -424,7 +451,7 @@ span.password {
 
     /* avataro img */
     img.avatar2 {
-        width: 25%;
+        width: 40%;
         border-radius: 50%;
     }
 
@@ -462,21 +489,30 @@ button:hover {
 }
 
 /* cancel mygtuko stilius */
-.atsaukimas_btn {
-  padding: 14px 20px;
+.mygtukai a {
+  padding: 16.5px 49px;
   background-color: red;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+
+
+
 }
 
-/* Float cancel ir registracijos btn cancel su plociu */
-.atsaukimas_btn, .registruotis_btn {
-  float: none;
+/* registracijos btn cancel su plociu */
+ .registruotis_btn {
   width: 25%;
+
 }
 
 
 .reg_container {
   padding: 16px;
   text-align: left;
+  max-width: 600px;
+  position: relative;
+  margin: auto;
 }
 
 
