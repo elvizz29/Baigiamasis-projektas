@@ -6,23 +6,24 @@
 session_start();
 require ('prisijungimas_prie_DB.php');
 // user ir pssw kintamieji
-$vartotojas = "vartotojo_vardas";
-$slaptazodis = "slaptazodis";
+$vartotojas = "test";
+$slaptazodis = "pass";
 
-// klaida
-$error = "prisijungti nepavyko";
+
+echo $_SESSION['Prisijungta'];
 
 // patikrina ar prisijunges vartotojas, jei ne tai nukreipia i prisijungta.php
 if (isset($_SESSION['Prisijungta']) && $_SESSION['Prisijungta'] == true) {
-    $error = "Prisijungti pavyko";
+    echo "Prisijungti pavyko";
     header('Location: prisijungta.php');
 }
 
 // patikrina ar suvesti prisijungimo duomenys
 // jei suvesti tai prijungia vartotoja
-if (isset($_POST['vartotojo_vardas']) && isset($_POST['vartotojo_vardas'])) {
-    if ($_POST['vartotojo_vardas'] == $vartotojas && $_POST['slaptazodis'] == $slaptazodis) {
+if (isset($_POST['username']) && isset($_POST['username'])) {
+    if ($_POST['username'] == $vartotojas && $_POST['slaptazodis'] == $slaptazodis) {
         $_SESSION['Prisijungta'] = true;
+        echo $_SESSION['Prisijungta'];
         header('Location: prisijungta.php');
     } else {
         $_SESSION['Prisijungta'] = false;
@@ -50,10 +51,10 @@ if (isset($_POST['vartotojo_vardas']) && isset($_POST['vartotojo_vardas'])) {
 
 <body>
 
-  <?php echo "<font color='red'>" . $error . "</font>"; ?>
 
+<?php echo $_SESSION['Prisijungta']; ?>
 
-  <form action="login_forma.php" method="POST">
+  <form action="login_forma.php" method="post">
     <div class="imgcontainer">
       <img src="./images/user-login.jpg" alt="Avatar" class="avatar">
     </div>

@@ -1,6 +1,6 @@
 
 <?php
-$connection = mysqli_connect('localhost', 'root', 'root', 'users');
+$connection = mysqli_connect('localhost', 'root', '', 'users');
 if (!$connection){
     die("Prisijungimas nepavyko" . mysqli_error($connection));
 }
